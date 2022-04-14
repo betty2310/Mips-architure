@@ -10,3 +10,5 @@
 	
 	syscall
 ```
+
+Click in each lab to see my notes or comment.
