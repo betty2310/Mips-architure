@@ -1,3 +1,5 @@
+#Laboratory Exercise 2, Assignment 1
+
 .text 
 	add $s0, $zero, 0x3007
 	add $s0, $zero, $zero   #hoac co the la $0 cx duoc
