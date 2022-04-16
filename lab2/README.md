@@ -62,13 +62,9 @@ Gõ trên hợp ngữ mới hiểu nó rắc rối như nào :v, đầu tiên g�
 
 Phép nhân thao tác trong `mips` được lưu trữ ở 2 thanh ghi `hi` và `lo`, tương tự với phép chia
 
-|hi | lo|
-|--- |  ---|
-|63->32| 31->0|
+![!](./pic/2022.04.16-15.00.03.screenshot.png)
 
 Quan sát thấy thì 2 lệnh `mul` vừa là R vừa là I types, hề vl :v.  `mul` sẽ là giả lệnh, nó nhân 2 toán hạng đằng sau lại và gán cho thằng trước. Ở câu lệnh đầu thì là 2 thanh ghi rồi, nhưng câu lệnh sau là thanh ghi với 1 hằng số, vậy thì nó làm gì?
-
-Ảnh
 
 Câu lệnh cuối `mflo` đơn giản là lấy giá trị của thanh ghi `lo` và gắn cho thanh ghi biến. 
 
