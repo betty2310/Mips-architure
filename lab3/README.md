@@ -77,3 +77,39 @@ case_2:
 default:
 continue:
 ```
+
+# Exercise 4
+
+```
+Modify the Assignment 1, so that the condition tested is 
+a. i <j 
+b. i >= j 
+c. i+j <= 0 
+d. i+j > m+n 
+```
+
+# Exercise 5
+
+```
+Modify the Assignment 2, so that the condition tested at the end of the loop is: 
+a. i < n 
+b. i <= n 
+c. sum >= 0 
+d. A[i] == 0 
+```
+# Exercise 6
+
+```
+Using all of above instructions and statements, create a new project to implement this function: find the element with the largest absolute value in a list of integers. 
+Assuming that this list is store in an integer array and we know the number of element in its
+```
+
+Một bài toán chắc 3 dòng với code các ngôn ngữ bậc trung và cao, nhưng đây là hợp ngữ, nên chắc sẽ là 3 chục dòng :v. 
+Về thuật toán cũng đơn giản: chỉ là duyệt qua tất cả các phần tử trong mảng, so sánh với 1 biến `result`, nếu giá trị tuỵệt đối của phần tử trong mảng lớn hơn thì gán lại biến `result` bằng giá trị đó, nếu không thì thôi. 
+
+Để giải quyết bài toán như vậy, cần thực hiện các bài toán nhỏ hơn là:
+
++ Tính giá trị tuyệt đối của phần tử. 
++ So sánh 2 giá trị, gắn giá trị `res` mới.
++ Áp dụng được lệnh `for` và `if-else` ở trên. 
+

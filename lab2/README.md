@@ -7,7 +7,7 @@
 Các câu lệnh biên dịch bình thường:
 ![!](./pic/2022.04.16-10.26.14.screenshot.png)
 
-Ở câu lệnh cuối: `addi $s0, $zero, 0x2110003d` lại được chia ra thành 3 lệnh nhỏ là:
+Ở câu lệnh cuối: `addi $s0, $zero, 0x2110003d` lại được chia ra thành **3 lệnh nhỏ** là:
 
 + `lui $1, 0x00002110` 
 + `ori $1, $1, 0x0000003d`

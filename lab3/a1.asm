@@ -6,7 +6,7 @@
 
 start:
 	slt 	$t0, $s2, $s1	#j<i
-	beq 	$t0, $zero, else
+	bne 	$t0, $zero, else
 	addi	$t1, $t1, 1
 	addi 	$t3, $zero, 1
 	j		endif

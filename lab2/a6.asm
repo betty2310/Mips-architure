@@ -7,8 +7,8 @@
 .text
 	la	$t8, X
 	la 	$t9, Y
-	lw	$t1, ($t8)
-	lw	$t2, ($t9)
+	lw	$t1, 4($t8)
+	lw	$t2, 4($t9)
 	
 	add $s0, $t1, $t1
 	add $s0, $s0, $t2
