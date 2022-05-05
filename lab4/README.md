@@ -22,7 +22,7 @@ Từ đó xây dựng nên solution cho bài toàn xác định overflow.
 
 3. So sánh với tổng 2 số dựa theo điều kiện âm hay dương.
 
-
+Tính tổng lúc này phải dùng `addu` để bỏ qua overflow, nếu dùng `add` thường, khi có overflow sẽ báo lỗi ngay.
 
 1 mẹo code trong `mips` là mình nghĩ luôn code đáp án ra trước và ở cuối cùng, ngay sau là `END`. Luồng code từ trên xuống dưới nên sẽ luôn thực hiện điều này. Các trường hợp `if-else` nên sử dụng khéo léo đề jump xuống `END`, hoặc tiếp tục chạy để thực hiện đáp án mình muốn. 
 
@@ -35,9 +35,9 @@ Thì dùng phép `and` thôi, cơ bản thì cũng dễ :v. Chỉ cần nhớ s�
 Ví dụ:
 
 ```
-li $s0, 0x0563 					
-andi $t0, $s0, 0xff 			
-andi $t1, $s0, 0x0400 			
+li $s0, 0x0563                     
+andi $t0, $s0, 0xff             
+andi $t1, $s0, 0x0400             
 ```
 
 + `$s0` có giá trị ở dạng hexa là 0000 0563.
@@ -53,6 +53,4 @@ andi $t1, $s0, 0x0400
 Cái này thì trước đây mình từng dùng rồi. Toán tử logic dịch bit (trái hoặc phải), trong `C` là `>>` hoặc `<<`. 
 Ứng dụng trong phép nhân, có thể sử dụng phép dịch trái `n` bit để nhân số hạng với $2^n$ 
 
-# Assignments
-
-
+# 

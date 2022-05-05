@@ -27,11 +27,11 @@ Dễ thấy có thể giải thích tại sao lại phải chia thành 3 câu l�
 ### Sự thay đổi giá trị của thanh ghi `$s0`
 
 + câu lệnh đầu tiên (I type), ở dạng basic chính xác là 
-
-    ```
-    lui $s0, 0x00002110 
-    ```
-
+  
+  ```
+  lui $s0, 0x00002110 
+  ```
+  
     Tức là `$s0` = `0x00002110` * $2^{16}$ và `= 0x21100000`
 
 + Phép `ori` (J type) tiếp chính là `OR` `$s0` bây giờ với giá trị `0x0000003d`, từ đó `$s0` thành gía trị cần tìm (32 bit). 
@@ -83,8 +83,8 @@ Nó tạo 3 gía trị X, Y, X trong bộ nhớ đúng khum.
 Các địa chỉ các các dữ liệu đó hiện tại được lưu trữ ở thanh ghi
 
 ```
-la	$t8, X
-la 	$t9, Y
+la    $t8, X
+la     $t9, Y
 ```
 
 `la` chính là gắn địa chỉ của biến cần xử lý (X và Y) vào thanh ghi (`$t8` và `$t9`), nhận thấy địa chỉ của các biến này là 32 bit. Câu lệnh I type này sẽ lại chuyển thành lại lệnh `lui` và `ori` dể xử lý thôi (giống phép trước mình học rồi mà). 
@@ -92,8 +92,8 @@ la 	$t9, Y
 Tiếp theo, cpu lấy giá trị của 2 chú bé trên thông qua địa chỉ có nó, trong bài này bằng lệnh:
 
 ```
-lw	$t1, ($t8)
-lw	$t2, ($t9)
+lw    $t1, ($t8)
+lw    $t2, ($t9)
 ```
 
 `lw` sẽ load giá trị from memory đó. Đúng chu trình hoạt động chưa. Tiếp theo, CPU xử lý các dữ liệu này (đơn giản như làm mấy phép tính kểu phép cộng thông qua `ALU`) 
