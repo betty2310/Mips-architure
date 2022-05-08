@@ -5,7 +5,7 @@
 2 lệnh add cơ bản trong `mips` là `add` (R type) và `addi` (I type). Tại sao lại khác biệt vậy? Dù cả 2 đều là phép cộng 2 số hạng và gán cho một số hạng khác, nhưng mà `add` sử dụng 2 toán tử chính là 2 register, còn `addi` chỉ sử dụng 1 kèm với 1 hằng số (theo đúng định nghĩa chưa).
 
 Các câu lệnh biên dịch bình thường:
-![!](./pic/2022.04.16-10.26.14.screenshot.png)
+![!](../pic/2022.04.16-10.26.14.screenshot.png)
 
 Ở câu lệnh cuối: `addi $s0, $zero, 0x2110003d` lại được chia ra thành **3 lệnh nhỏ** là:
 
@@ -46,7 +46,7 @@ Các giả lệnh là các lệnh không có trong các câu lệnh `mips` chu�
 
 Hiên nhiên, việc xử lý operand sau chỉ ở 16 bit, nên nếu vượt quá, nó cũng sẽ chuyển thành 2 câu lệnh `lui` và `ori` như đã trình bày ở trên. 
 
-![!](./pic/2022.04.16-10.57.34.screenshot.png)
+![!](../pic/2022.04.16-10.57.34.screenshot.png)
 
 `li` ở câu lệnh 2 alias cho `addiu`. Thế cái này khác gì cái `add`, hình như là về chuyện `unsigned`, nhưng sẽ tìm hiểu sau.
 
@@ -62,7 +62,7 @@ Gõ trên hợp ngữ mới hiểu nó rắc rối như nào :v, đầu tiên g�
 
 Phép nhân thao tác trong `mips` được lưu trữ ở 2 thanh ghi `hi` và `lo`, tương tự với phép chia
 
-![!](./pic/2022.04.16-15.00.03.screenshot.png)
+![!](../pic/2022.04.16-15.00.03.screenshot.png)
 
 Quan sát thấy thì 2 lệnh `mul` vừa là R vừa là I types, hề vl :v.  `mul` sẽ là giả lệnh, nó nhân 2 toán hạng đằng sau lại và gán cho thằng trước. Ở câu lệnh đầu thì là 2 thanh ghi rồi, nhưng câu lệnh sau là thanh ghi với 1 hằng số, vậy thì nó làm gì?
 

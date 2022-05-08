@@ -263,7 +263,7 @@ Về thuật toán cũng đơn giản: chỉ là duyệt qua tất cả các ph�
 + So sánh 2 giá trị, gắn giá trị `res` mới.
 + Áp dụng được lệnh `for` và `if-else` ở trên. 
 
-# Lab 1
+# Lab 2
 
 ## Assignment 1
 
