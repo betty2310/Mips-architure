@@ -68,6 +68,7 @@ Cơ bản, phải hiểu rõ việc load address (`la`), load giá trị từ ad
 
 > Get input string from user and count length of this string.
 
+
 Bài này mới được áp dụng cái syscall ở trên :v. Bỏ qua thuật toán đếm độ dài đi, bài toán này cho mình áp dụng cách sử dụng input message string từ dialog và output int từ dialog.
 
 Cái đầu tiên là input:
