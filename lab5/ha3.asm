@@ -1,7 +1,7 @@
 .data	
 	str: .space 100
 	message1: .asciiz "Program count length of string!\nInput: "
-	message2: .asciiz "Result is: "
+	message2: .asciiz "Result: "
 .text
 	# get input str from user
 GETINPUT:
