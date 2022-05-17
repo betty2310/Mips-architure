@@ -30,4 +30,3 @@ end_func_sort: 	j end
 func_swap:	sw $s0, 0($t0)
 			sw $s1, 0($a0)
 			j countinue
-			nop
