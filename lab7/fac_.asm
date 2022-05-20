@@ -15,10 +15,10 @@ MAIN:
 	
 FACT:
 	# store var
-	subi $sp, $sp, 4
+	addi $sp, $sp, -4
 	sw $a0, 0($sp)
 	
-	subi $sp, $sp, 4
+	addi $sp, $sp, -4
 	sw $ra, 0($sp)
 	
 	#func
@@ -28,8 +28,9 @@ FACT:
 	jr $ra
 	
 RECURSION:	
-	subi $a0, $a0, 1
+	addi $a0, $a0, -1
 	jal FACT
+	
 	#restore var 
 	lw $ra, 0($sp)
 	lw $a0, 4($sp)
