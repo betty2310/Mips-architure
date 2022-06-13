@@ -1,8 +1,8 @@
 .eqv HEADING		0xffff8010
 .eqv LEAVETRACK		0xffff8020
-.eqv MOVING			0xffff8030
-.eqv WHEREX			0xffff8040
-.eqv WHEREY			0xffff8050
+.eqv MOVING			0xffff8050
+.eqv WHEREX			0xffff8030
+.eqv WHEREY			0xffff8040
 
 .text
 main:	
@@ -17,9 +17,16 @@ main:
 	# gio moi go ne` :v
 	jal GO
 	nop
-sleep:
+
 	li $v0, 32
-	li $a0, 5000
+	li $a0, 2000
+	syscall
+	
+	li $a0, 180
+	jal ROTATE
+	nop
+	li $v0, 32
+	li $a0, 2000
 	syscall
 	
 	jal UNTRACK
@@ -27,11 +34,18 @@ sleep:
 	jal TRACK
 	nop
 	
-	li $a0, 180
+	li $a0, 90
 	jal ROTATE
 	nop
 	li $v0, 32
-	li $a0, 5000
+	li $a0, 2000
+	syscall
+	
+	li $a0, 20
+	jal ROTATE
+	nop
+	li $v0, 32
+	li $a0, 2000
 	syscall
 	
 	jal UNTRACK
@@ -45,22 +59,6 @@ sleep:
 	li $v0, 32
 	li $a0, 5000
 	syscall
-	
-	jal UNTRACK
-	nop
-	jal TRACK
-	nop
-	li $a0, 120
-	jal ROTATE
-	nop
-	li $v0, 32
-	li $a0, 2000
-	syscall
-	
-	jal UNTRACK
-	nop
-	jal TRACK
-	nop
 	
 	jal STOP
 	nop
@@ -113,7 +111,10 @@ GO:
 	sb $k0, 0($at)
 	jr $ra 
 	nop
-	
+#----------------------------------------------------------
+# STOP procedure, to stop running 
+# param[in] none
+#----------------------------------------------------------	
 STOP:
 	li $at, MOVING 
 	sb $zero, 0($at)
