@@ -1,0 +1,4 @@
+# Macos cache file
+./DS_Store
+./*.DS_Store
+*/DS_Store

@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Báo cáo Project giữa kì}
+\author{Dương Hữu Huynh}
+
+\begin{document}
+\maketitle
+\section{Đề bài}
+Write a program to:
+Assume that you already have 1 variable (number students) and 2 arrays (student name, mark) in memory
+\begin{enumerate}
+    \item Read in the number of students in the class.
+    \item Read information about each student, including: Name, Math mark.
+    \item List the names of all students who have not passed the Math exam.
+\end{enumerate}
+\section{Cách thực hiện}
+\begin{itemize}
+    \item Đầu vào của chương trình gồm số lượng sinh viên, 2 mảng lưu tên, điểm của sinh viên và điểm tối thiểu của sinh viên để đánh giá có vượt qua bài kiểm tra hay không. Các dữ liệu được khởi tạo sẵn trong vùng \verb|data|. 
+    \item Đầu ra của chương trình là danh sách các sinh viên không vượt qua bài kiểm tra.
+    \item Sử dụng 1 vòng \verb|for| để duyệt qua từng sinh viên, kiểm tra điểm của sinh viên với điểm tối thiểu, in ra console thông tin sinh viên thoả mãn điều kiện.
+\end{itemize}
+\section{Ý nghĩa một số thanh ghi chính sử dụng}
+\begin{itemize}
+    \item \verb|$s0|: lưu giá trị số lượng sinh viên.
+    \item \verb|$s1|: lưu giá trị địa chỉ của phần tử đầu trong mảng điểm sinh viên.
+    \item \verb|$s2|: lưu giá trị địa chỉ của phần tử đầu trong mảng tên sinh viên.
+    \item \verb|$f0|: lưu giá trị điểm tối thiểu để đánh giá trượt hoặc đỗ.
+    \item \verb|$t0|: lưu giá trị kích thước của phần tử mảng điểm sinh viên.
+    \item \verb|$t1|: lưu giá trị kích thước của phần tử mảng tên sinh viên.
+\end{itemize}
+\section{Ý nghĩa chương trình con sử dụng}
+\subsection{compare}
+\begin{itemize}
+    \item So sánh giá trị của 2 biến kiểu float 
+    \item Đầu vào gồm 2 biến kiểu float \verb|$f0| và \verb|$f1|.
+    \item Đầu ra gồm 1 biến kiểu int \verb|$v0|. \verb|$v0 = 1| nếu \verb|$f0 < $f1| và 0 trong các trường hợp còn lại. 
+\end{itemize}
+
+Để so sánh 2 số hạng kiểu float, sử dụng câu lệnh \verb|c.lt.s|. Để lấy trạng thái của phép so sánh nêu trên, sử dụng câu lệnh \verb|movt|. Sau đó gán cho \verb|$v0|.
+\begin{lstlisting}
+.ent compare
+compare:
+    c.lt.s $f0, $f1			# flag = ($f0 < $f1) ? 1 : 0
+    li $t8, 0
+    li $t9, 1
+    movt $t8, $t9			# if flag == 1, $t8 = $t9 
+    add $v0, $t8, $zero
+    jr $ra	
+.end compare    
+\end{lstlisting}
+\subsection{print}
+\begin{itemize}
+    \item In thông tin của sinh viên gồm điểm và tên ra màn hình console
+    \item Đầu vào gồm địa chỉ điểm của sinh viên và địa chỉ tên của sinh viên đó.
+\end{itemize}
+Sử dụng các functions của \verb|syscall|.
+\begin{lstlisting}
+.ent print
+print:
+li $v0, 2
+l.s $f12, 0($a0)
+syscall
+
+li $v0, 4
+la $a0, tab
+syscall
+
+li $v0, 4
+move $a0, $a1
+syscall
+
+li $v0, 4
+la $a0, nextline
+syscall
+jr $ra
+.end print
+\end{lstlisting}
+\end{document}
