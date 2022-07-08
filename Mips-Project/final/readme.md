@@ -1,3 +1,19 @@
+### Table of contents
++ [Báo cáo project cuối kỳ](#báo-cáo-project-cuối-kỳ)
+
+    + [Sinh viên](#sinh-viên)
+    + [Đề bài](#đề-bài)
++ [Phân tích](#phân-tích)
++ [Thuật toán](#thuật-toán)
+  + [Hiển thị hình ảnh trên màn hình console](#hiển-thị-hình-ảnh-trên-màn-hình-console)
+  + [Các chữ cái DCE chỉ còn lại viền, không còn màu số ở giữa, và hiển thị](#các-chữ-cái-dce-chỉ-còn-lại-viền-không-còn-màu-số-ở-giữa-và-hiển-thị)
+  + [Hoán đổi vị trí của các chữ, thành ECD, và hiển thị.](#hoán-đổi-vị-trí-của-các-chữ-thành-ecd-và-hiển-thị)
+  + [Nhập từ bàn phím kí tự màu cho chữ D, C, E, rồi hiển thị ảnh trên với màu mới.](#nhập-từ-bàn-phím-kí-tự-màu-cho-chữ-d-c-e-rồi-hiển-thị-ảnh-trên-với-màu-mới)
+  + [Interrupt](#interrupt)
++ [Mã nguồn](#mã-nguồn)
++ [Kết quả](#kết-quả)
+  
+  
 # Báo cáo project cuối kỳ
 
 ### Sinh viên
